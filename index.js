@@ -18,12 +18,15 @@ const server = http.createServer((req, res) => {
     case "/contact":
       view += "contact.html";
       break;
+    case "/home":
+      view += "Home.html";
+      break;
 
     default:
       view += "Home.html";
       break;
   }
-  fs.readFile(view,'utf-8', (err, data) => {
+  fs.readFile(view, "utf-8", (err, data) => {
     if (err) {
       console.log(err);
       res.end();
